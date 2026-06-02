@@ -22,7 +22,7 @@ public class JoueurServiceMockTest {
 
         // 2. Exécution et vérification
         Exception exception = assertThrows(AucunJoueurEnregistreException.class, () -> {
-            joueurService.afficherJoueurs();
+            joueurService.listerJoueurs();
         });
 
     }
@@ -98,7 +98,7 @@ public class JoueurServiceMockTest {
         // Initialisation avec le mock retournant plusieurs joueurs
         joueurService = new listerPlusieursJoueursOkMock();
 
-        List<JoueurDTO> listeResultat = joueurService.afficherJoueurs();
+        List<JoueurDTO> listeResultat = joueurService.listerJoueurs();
 
         // Assertions et vérifications de la liste complète
         assertNotNull(listeResultat);

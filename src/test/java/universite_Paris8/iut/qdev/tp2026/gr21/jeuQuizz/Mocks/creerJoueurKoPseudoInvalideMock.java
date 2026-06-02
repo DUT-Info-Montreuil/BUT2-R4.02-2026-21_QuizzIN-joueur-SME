@@ -13,7 +13,7 @@ public class creerJoueurKoPseudoInvalideMock implements IJoueurService {
     }
 
     @Override
-    public List<JoueurDTO> afficherJoueurs() {
+    public List<JoueurDTO> listerJoueurs() {
         return null;
     }
 }

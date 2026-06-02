@@ -17,7 +17,7 @@ public class listerJoueursKoZeroJoueursMock implements IJoueurService {
     }
 
     @Override
-    public List<JoueurDTO> afficherJoueurs() throws AucunJoueurEnregistreException {
+    public List<JoueurDTO> listerJoueurs() throws AucunJoueurEnregistreException {
         throw new AucunJoueurEnregistreException("MOCK");
     }
 }

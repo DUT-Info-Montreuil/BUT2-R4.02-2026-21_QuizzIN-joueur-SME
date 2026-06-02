@@ -1,21 +1,18 @@
 package universite_Paris8.iut.qdev.tp2026.gr21.jeuQuizz.entities.dtos;
 
-
-import universite_Paris8.iut.qdev.tp2026.gr21.jeuQuiz.utils.enums.Langue;
+import universite_Paris8.iut.qdev.tp2026.gr21.jeuQuizz.utils.enums.Langue;
 import java.util.List;
 
 public class JoueurDTO {
     private String prenom;
     private String pseudo;
     private int anneeNaissance;
-    private Langue languePref; // TypÃ© en Enum d'aprÃ¨s votre diagramme de conception
+    private Langue languePref;
     private String centreInterets;
-    private List<Object> listeScore; // Ã€ remplacer par List<Score> une fois votre entitÃ© Score crÃ©Ã©e
+    private List<Object> listeScore;
 
-    // Constructeur vide
     public JoueurDTO() {}
 
-    // Constructeur complet
     public JoueurDTO(String prenom, String pseudo, int anneeNaissance, Langue languePref, String centreInterets, List<Object> listeScore) {
         this.prenom = prenom;
         this.pseudo = pseudo;
@@ -25,7 +22,6 @@ public class JoueurDTO {
         this.listeScore = listeScore;
     }
 
-    // Getters et Setters
     public String getPrenom() { return prenom; }
     public void setPrenom(String prenom) { this.prenom = prenom; }
 

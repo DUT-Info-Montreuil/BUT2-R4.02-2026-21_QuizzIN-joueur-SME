@@ -8,7 +8,7 @@ import universite_Paris8.iut.qdev.tp2026.gr21.jeuQuizz.utils.exceptions.PseudoIn
 
 import java.util.List;
 
-public interface JoueurService {
+public interface IJoueurService {
 
     JoueurDTO creerJoueur(String prenom, String pseudo, int anneeNaissance,
                           List<String> centresInteret, int languePreferee)

@@ -14,5 +14,5 @@ public interface IJoueurService {
                           List<String> centresInteret, int languePreferee)
             throws PseudoExistantException, PseudoInvalideException, LangueInvalideException;
 
-    List<JoueurDTO> afficherJoueurs() throws AucunJoueurEnregistreException;
+    List<JoueurDTO> listerJoueurs() throws AucunJoueurEnregistreException;
 }

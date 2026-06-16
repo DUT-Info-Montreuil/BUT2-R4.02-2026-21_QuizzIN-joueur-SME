@@ -95,4 +95,29 @@ public class JoueurServiceMockTest {
         assertNotNull(resultat);
         assertEquals("", resultat.getCentreInterets(), "La chaîne des centres d'intérêt doit être vide.");
     }
+
+    @Test
+    public void testFournirStatsJoueur_CasNominal() throws Exception {
+        joueurService = new fournirStatsJoueurOkMock();
+        List<Object> stats = joueurService.fournirStatsJoueur("Moulai");
+
+        assertNotNull(stats);
+        assertEquals(3, stats.size(), "La liste de scores doit contenir 3 entrées.");
+    }
+
+    @Test
+    public void testFournirStatsJoueur_AucunJoueurEnregistre() {
+        joueurService = new fournirStatsJoueurKoAucunJoueurMock();
+        assertThrows(AucunJoueurEnregistreException.class, () -> {
+            joueurService.fournirStatsJoueur("Moulai");
+        });
+    }
+
+    @Test
+    public void testFournirStatsJoueur_JoueurInexistant() {
+        joueurService = new fournirStatsJoueurKoJoueurInexistantMock();
+        assertThrows(AucunJoueurEnregistreException.class, () -> {
+            joueurService.fournirStatsJoueur("PseudoInconnu");
+        });
+    }
 }

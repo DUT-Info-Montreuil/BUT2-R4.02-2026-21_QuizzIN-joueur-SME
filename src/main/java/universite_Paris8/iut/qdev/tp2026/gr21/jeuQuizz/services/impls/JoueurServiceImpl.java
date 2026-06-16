@@ -11,6 +11,7 @@ import universite_Paris8.iut.qdev.tp2026.gr21.jeuQuizz.utils.exceptions.PseudoIn
 import java.util.ArrayList;
 import java.util.List;
 
+// Ajout de l'implémentation de l'interface IStatJoueurInterface
 public class JoueurServiceImpl implements IJoueurService {
 
     private List<JoueurDTO> listeJoueurs;
@@ -69,4 +70,21 @@ public class JoueurServiceImpl implements IJoueurService {
         }
         return listeJoueurs;
     }
+
+    @Override
+    public List<Object> fournirStatsJoueur(String pseudo) throws AucunJoueurEnregistreException {
+        if (listeJoueurs.isEmpty()) {
+            throw new AucunJoueurEnregistreException("ERROR : pas de joueur enregistré dans le système");
+        }
+
+        for (JoueurDTO joueur : listeJoueurs) {
+            if (joueur.getPseudo().equalsIgnoreCase(pseudo)) {
+                return joueur.getListeScore();
+            }
+        }
+
+        // On réutilise la même exception si le joueur spécifique n'est pas trouvé
+        throw new AucunJoueurEnregistreException("ERROR : le joueur avec le pseudo " + pseudo + " n'existe pas.");
+    }
+
 }
